@@ -4,27 +4,34 @@ library(shiny)
 library(stringi)
 
 # read
-res = readRDS("data/results.rds")
+res <- readRDS("data/results.rds")
 
 # highchart theme
-my_hc_theme = function (main = "white", back = NA)
-{
+my_hc_theme <- function(main = "white", back = NA) {
   theme <- hc_theme(
     colors = c("#FD5901", "#FFA10D", "#0094A3", "#005F60"),
     chart = list(
       backgroundColor = back,
-      style = list(fontFamily = "Inconsolata",
-                   color = main)
+      style = list(
+        fontFamily = "Inconsolata",
+        color = main
+      )
     ),
-    title = list(style = list(color = main),
-                 align = "left"),
-    subtitle = list(style = list(color = main),
-                    align = "left"),
+    title = list(
+      style = list(color = main),
+      align = "left"
+    ),
+    subtitle = list(
+      style = list(color = main),
+      align = "left"
+    ),
     legend = list(
       align = "right",
       verticalAlign = "bottom",
-      itemStyle = list(fontWeight = "normal",
-                       color = main)
+      itemStyle = list(
+        fontWeight = "normal",
+        color = main
+      )
     ),
     xAxis = list(
       gridLineDashStyle = "Dot",
@@ -48,7 +55,7 @@ my_hc_theme = function (main = "white", back = NA)
       title = list(style = list(color = main))
     )
   )
-  
+
   theme <- structure(theme, class = "hc_theme")
   theme
 }
