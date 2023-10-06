@@ -50,3 +50,6 @@ rsconnect/
 
 #DS Store
 .DS_Store
+
+# don't sync
+don't sync/
